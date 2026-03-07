@@ -1,0 +1,7 @@
+ffmpeg
+
+yt-dlp
+
+nodejs
+
+mutagen (metadata write in
