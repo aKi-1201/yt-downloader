@@ -1,7 +1,10 @@
-ffmpeg
+ffmpeg（需在 PATH）
 
-yt-dlp
+yt-dlp[default]   ← 內含 yt-dlp-ejs，必裝
+  pip install -U "yt-dlp[default]" mutagen
 
-nodejs
+JS runtime（擇一）
+  deno（yt-dlp 預設啟用，推薦）
+  nodejs >= 22
 
-mutagen (metadata write in
+mutagen（metadata 寫入）

@@ -49,16 +49,16 @@
 請先安裝：
 - Python 3.10+
 - ffmpeg（需在 PATH 中）
-- Node.js（建議，用於 YouTube JS runtime 相容）
+- JS runtime（必要）：deno（推薦）或 Node.js >= 22
 
 Python 套件：
-- yt-dlp
+- yt-dlp[default]（包含 yt-dlp-ejs）
 - mutagen
 
 你可以參考 [套件.txt](套件.txt)，或用以下指令安裝：
 
 ```bash
-pip install -U yt-dlp mutagen
+pip install -U "yt-dlp[default]" mutagen
 ```
 
 ## 使用方式
@@ -80,7 +80,11 @@ python your_script.py
 ## 常見問題
 
 ### 1) 出現 YouTube JS runtime 警告
-請安裝 Node.js，並確認可在終端機執行 node。
+自 yt-dlp 2025.11.12 起必須有外部 JS runtime 與 yt-dlp-ejs。請：
+1. `pip install -U "yt-dlp[default]"`
+2. 安裝 deno，或 Node.js >= 22（`node --version` 確認）
+
+Notebook 會自動偵測並設定 `js_runtimes`。
 
 ### 2) ffmpeg 找不到
 請確認 ffmpeg 已加入 PATH：
